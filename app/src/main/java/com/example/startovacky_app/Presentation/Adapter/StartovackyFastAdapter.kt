@@ -17,7 +17,7 @@ class StartovackyFastAdapter(val startovackyItem: StartovackyDataClassItem) ://A
         binding: ItemStartovackyBinding,
         payloads: List<Any>,
     ) {//prirazuje view s DataClassou
-        binding.txtName.text = startovackyItem.name
+        binding.textNazevLokace.text = startovackyItem.name
     }
 
     override fun createBinding(

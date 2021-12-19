@@ -1,36 +1,356 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/backgroudn"
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp"
-        app:cardCornerRadius="20dp">
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/background"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white">
+            android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/canvas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/canvas"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp" />
 
-            <TextView
-                android:id="@+id/txt_name"
-                android:layout_width="0dp"
-                android:layout_height="20dp"
-                android:gravity="center|left"
-                android:maxLines="1"
-                android:text="  Enjoy Our Products Here Right Now !!"
-                android:textColor="@color/black"
+            <ImageView
+                android:id="@+id/image_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/czech_flag"
+                android:src="@mipmap/czech_flag"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.03"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.05" />
+
+            <TextView
+                android:id="@+id/text_nazev_lokace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="@string/krupka"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/image_flag"
+                app:layout_constraintStart_toEndOf="@id/image_flag"
+                app:layout_constraintTop_toTopOf="@id/image_flag" />
+
+            <TextView
+                android:id="@+id/text_nadmorska_vyska"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:text="@string/_630_m"
+                app:layout_constraintEnd_toEndOf="@id/text_nazev_lokace"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/text_nazev_lokace"
+                app:layout_constraintTop_toBottomOf="@id/text_nazev_lokace" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_clock"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:backgroundTint="@color/white"
+                android:elevation="20dp"
+                app:cardCornerRadius="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <DigitalClock
+                    android:id="@+id/clock"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:format24Hour="kk:mm"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/text_celsia"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="@string/_5_c"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.99"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_kruh" />
+
+            <ImageView
+                android:id="@+id/image_moon"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/ic_moon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/text_celsia"
+                app:layout_constraintHeight_default="wrap"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.35" />
+
+            <TextView
+                android:id="@+id/text_smer_skoku"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="@string/v_jv_j"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/image_kruh"
+                app:layout_constraintEnd_toStartOf="@id/image_kruh"
+                app:layout_constraintTop_toTopOf="@id/image_kruh" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="0dp"
+                android:src="@drawable/ic_preassure"
+                app:layout_constraintBottom_toBottomOf="@id/imageView2"
+                app:layout_constraintStart_toEndOf="@id/imageView2"
+                app:layout_constraintTop_toTopOf="@id/imageView2"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="0dp"
+                android:contentDescription="@string/cloud_possibility"
+                android:src="@drawable/ic_posibility_cloud"
+                app:layout_constraintBottom_toBottomOf="@id/imageView4"
+                app:layout_constraintStart_toEndOf="@id/imageView4"
+                app:layout_constraintTop_toTopOf="@id/imageView4"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:contentDescription="@string/cloud_rainned"
+                android:src="@drawable/ic_rainned"
+                app:layout_constraintEnd_toEndOf="@id/text_percent"
+                app:layout_constraintHorizontal_bias="5"
+                app:layout_constraintStart_toStartOf="@id/text_percent"
+                app:layout_constraintTop_toBottomOf="@id/text_percent"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/text_preassure"
+                android:layout_width="35dp"
+                android:layout_height="10dp"
+                android:text="@string/_1023_hpa"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/imageView3"
+                app:layout_constraintStart_toStartOf="@id/imageView3"
+                app:layout_constraintTop_toBottomOf="@id/imageView3"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:id="@+id/text_possibility_rain"
+                android:layout_width="35dp"
+                android:layout_height="10dp"
+                android:gravity="center"
+                android:text="@string/_0_0_mm"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/imageView2"
+                app:layout_constraintStart_toStartOf="@id/imageView2"
+                app:layout_constraintTop_toBottomOf="@id/imageView2"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:id="@+id/text_rainned"
+                android:layout_width="35dp"
+                android:layout_height="10dp"
+                android:gravity="center"
+                android:text="@string/_1_127_m"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/imageView4"
+                app:layout_constraintStart_toStartOf="@id/imageView4"
+                app:layout_constraintTop_toBottomOf="@id/imageView4"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:id="@+id/text_percent"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="@string/_0"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@id/image_moon"
+                app:layout_constraintHorizontal_bias="0.75"
+                app:layout_constraintTop_toTopOf="@id/image_moon" />
+
+            <ImageView
+                android:id="@+id/image_kruh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/kruh"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.95"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/image_kompas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:src="@mipmap/kompas"
+                app:layout_constraintBottom_toBottomOf="@id/text_speed"
+                app:layout_constraintStart_toEndOf="@id/text_speed" />
+
+            <TextView
+                android:id="@+id/text_sever"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:gravity="center"
+                android:text="@string/s"
+                android:textSize="7sp"
+                app:layout_constraintBottom_toBottomOf="@id/image_kompas"
+                app:layout_constraintEnd_toEndOf="@id/image_kompas"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@id/image_kompas"
+                app:layout_constraintTop_toTopOf="@id/text_nadmorska_vyska"
+                app:layout_constraintVertical_bias="0.25"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:id="@+id/text_jih"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:gravity="center|top"
+                android:text="@string/j"
+                android:textSize="7sp"
+                app:layout_constraintBottom_toBottomOf="@id/image_kompas"
+                app:layout_constraintEnd_toEndOf="@id/image_kompas"
+                app:layout_constraintStart_toStartOf="@id/image_kompas"
+                app:layout_constraintTop_toTopOf="@id/image_kompas"
+                app:layout_constraintVertical_bias="1.17"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:id="@+id/text_zapad"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:gravity="center|top"
+                android:text="@string/z"
+                android:textSize="7sp"
+                app:layout_constraintBottom_toBottomOf="@id/image_kompas"
+                app:layout_constraintEnd_toEndOf="@id/image_kompas"
+                app:layout_constraintHorizontal_bias="1.08"
+                app:layout_constraintStart_toStartOf="@id/image_kompas"
+                app:layout_constraintTop_toTopOf="@id/image_kompas"
+                app:layout_constraintVertical_bias="0.54"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:id="@+id/text_vychod"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:gravity="center|top"
+                android:text="@string/v"
+                android:textSize="7sp"
+                app:layout_constraintBottom_toBottomOf="@id/image_kompas"
+                app:layout_constraintEnd_toEndOf="@id/image_kompas"
+                app:layout_constraintHorizontal_bias="0.08"
+                app:layout_constraintStart_toEndOf="@id/text_cislo_v_zavorce"
+                app:layout_constraintTop_toTopOf="@id/image_kompas"
+                app:layout_constraintVertical_bias="0.52"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:id="@+id/text_cislo"
+                android:layout_width="25dp"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="@string/_3"
+                android:textColor="#3da142"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/cardView_clock"
+                app:layout_constraintEnd_toEndOf="@id/image_flag"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintStart_toStartOf="@id/image_flag"
+                app:layout_constraintTop_toBottomOf="@id/image_flag"
+                app:layout_constraintVertical_bias="0.6" />
+
+            <TextView
+                android:id="@+id/text_speed"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:text="@string/m_s"
+                android:textColor="#3da142"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/text_cislo"
+                app:layout_constraintStart_toEndOf="@id/text_cislo" />
+
+            <TextView
+                android:id="@+id/text_cislo_v_zavorce"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:text="@string/_5"
+                android:textColor="#ffb514"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/text_cislo"
+                app:layout_constraintTop_toTopOf="@id/text_cislo" />
+
+            <TextView
+                android:id="@+id/text_smer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/sz"
+                android:textColor="#3da142"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/image_kompas"
+                app:layout_constraintTop_toTopOf="@id/image_kompas" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

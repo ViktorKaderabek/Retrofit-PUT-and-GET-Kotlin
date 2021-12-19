@@ -22,7 +22,7 @@ class MainViewModel : ViewModel() {
         FastAdapter.with(itemAdapter)
 
 
-     suspend fun loadItems() {
+    suspend fun loadItems() {
 
         val apiInterface = ApiInterface.create().getData()
 
@@ -48,6 +48,7 @@ class MainViewModel : ViewModel() {
                         )
                     )
 
+
                     Log.e("message", myData.name.toString())
 
                 }
@@ -60,7 +61,7 @@ class MainViewModel : ViewModel() {
         })
     }
 
-    suspend fun createData(){
+    suspend fun createData() {
 
         val apiInterface = ApiInterface.create().createData(name = "namee")
 
@@ -69,6 +70,20 @@ class MainViewModel : ViewModel() {
                 call: Call<StartovackyDataClassItem?>,
                 response: Response<StartovackyDataClassItem?>
             ) {
+                var myTitleBuilder: String = ""
+                val responseBody = response?.body()!!
+                val myData = responseBody
+
+                myTitleBuilder = myData.name.toString()
+
+                itemAdapter.add(
+                    StartovackyFastAdapter(
+                        StartovackyDataClassItem(
+                            name = myTitleBuilder,
+                            id = null
+                        )
+                    )
+                )
 
             }
 

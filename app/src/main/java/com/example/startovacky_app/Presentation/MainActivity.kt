@@ -38,11 +38,10 @@ class MainActivity : AppCompatActivity() {
             mainViewModel.loadItems()
 
         }
-        binding.btnNote.setOnClickListener {
+        binding.floatingActionButton.setOnClickListener {
 
             CoroutineScope(Dispatchers.IO).launch {
                 mainViewModel.createData()
-                mainViewModel.loadItems()
             }
             Toast.makeText(applicationContext, "Data Inserted", LENGTH_LONG).show()
 

@@ -1,3 +1,42 @@
 <resources>
-    <string name="app_name">Startovacky_app</string>
+    <string name="app_name">Layout</string>
+    <string name="moje_startova_ka">Moje Startovačka</string>
+    <string name="moje_startova_ky">Moje Startovačky</string>
+    <string name="startova_ky">Startovačky</string>
+    <string name="m_sta">Místa</string>
+    <string name="abc">Abc..</string>
+    <string name="nejbl_e">Nejblíže</string>
+    <string name="letovo">LETOVO!</string>
+    <string name="zem">Země</string>
+    <string name="k">K</string>
+    <string name="krupka">Krupka</string>
+    <string name="_5_c">5°C</string>
+    <string name="v_jv_j">V, JV, J</string>
+    <string name="_630_m">630 m</string>
+    <string name="todo">TODO</string>
+    <string name="czech_flag">czech_flag</string>
+    <string name="yello_moon">yello_moon</string>
+    <string name="_1023_hpa">1023 hPa</string>
+    <string name="_0_0_mm">0.0 mm</string>
+    <string name="_1_127_m">1,127 m</string>
+    <string name="_0">0 %</string>
+    <string name="cloud_rainned">cloud_rainned</string>
+    <string name="cloud_pressure">cloud_pressure</string>
+    <string name="cloud_possibility">cloud_possibility</string>
+    <string name="s">S</string>
+    <string name="j">J</string>
+    <string name="z">Z</string>
+    <string name="v">V</string>
+    <string name="_3">3</string>
+    <string name="m_s">m/s</string>
+    <string name="_5">(5)</string>
+    <string name="kruh">kruh</string>
+    <string name="kompas">kompas</string>
+    <string name="sz">SZ</string>
+    <string name="note">note</string>
+    <string name="plus">plus</string>
+    <string name="insert">Insert</string>
+    <string name="back">Back</string>
+
+
 </resources>
