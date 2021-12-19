@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Startovacky_app">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".Presentation.MainActivity"
             android:exported="true">
